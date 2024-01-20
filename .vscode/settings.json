@@ -1,0 +1,20 @@
+
+    {
+        "editor.renderWhitespace": "all",
+        "editor.renderControlCharacters": false,
+        // "editor.columnSelection": true,
+        "editor.formatOnSave": true,
+        "editor.fontSize": 16,
+        // "workbench.colorTheme": "Monokai Dimmed",
+        "files.autoSave": "afterDelay",
+        "workbench.experimental.editor.dragAndDropIntoEditor.enabled": true,
+        "breadcrumbs.enabled": false,
+        // "workbench.colorTheme": "GitHub Dark Default",
+        "editor.fontFamily": "'Cairo', sans-serif;",
+        // "workbench.iconTheme": "vscode-icons",
+        "editor.defaultFormatter": "vscode.debug-server-ready",
+        "prettier.arrowParens": "avoid",
+        "prettier.jsxSingleQuote": true,
+        "prettier.requireConfig": true,
+        "editor.cursorStyle": "line-thin"
+    }

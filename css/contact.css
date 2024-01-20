@@ -1,0 +1,490 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-Color: #033fc9;
+    --second-Color: #171717;
+    --transperent-Color: #b1b3b5;
+    --main-transition: 0.3s;
+    --main-padding: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    scroll-behavior: smooth;
+    transition: var(--main-transition);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* end global rules */
+
+.background {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--second-Color);
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* start header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+@media (max-width: 767px) {
+    header {
+        padding: 10px;
+        background-color: black;
+    }
+}
+
+header .logo h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+header .three {
+    width: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    cursor: pointer;
+    z-index: 200;
+}
+
+header .three .one {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    height: 1px;
+    margin-bottom: 5px;
+}
+
+header .three .two {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transition: .2s linear;
+}
+
+header .change #op {
+    transition: 0.2s;
+    opacity: 0;
+}
+
+header .change #mu {
+    transition: 0.2s;
+    transform: translate(-9px, 4px) rotate(45deg);
+}
+
+header .change #ml {
+    transition: 0.2s;
+    transform: translate(-9px, -8px) rotate(-45deg);
+}
+
+header .three:hover.three .two {
+    width: 100%;
+}
+
+.toggle {
+    position: fixed;
+    right: -100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100vh;
+    background-color: #000000e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s linear;
+}
+
+.toggle .links {
+    text-align: -webkit-center;
+}
+
+.toggle .links li {
+    position: relative;
+    margin-bottom: 30px;
+    width: fit-content;
+    padding: 0 15px;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.toggle .links li::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    z-index: -1;
+    height: 3px;
+    background: var(--main-Color);
+    transform: scaleX(0);
+    transition: .3s linear;
+    transform-origin: left;
+}
+
+.toggle .links li:hover::before {
+    transform: scaleX(1);
+}
+
+.toggle .social {
+    display: flex;
+}
+
+.toggle .links a {
+    color: white;
+}
+
+.toggle .social i {
+    color: white;
+    margin-right: 10px;
+    transition: 0.3s ease;
+}
+
+.toggle .social i:hover {
+    transform: rotate(360deg);
+    color: #ffffff59;
+}
+
+.open {
+    right: 0 !important;
+}
+
+
+/* end header */
+
+
+/* start contact */
+
+.blog {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 80px;
+}
+
+.blog .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.blog .container .comp {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.blog .container .comp h1 {
+    color: #272727;
+    font-size: 80px;
+    margin: 0;
+    font-weight: bold;
+}
+
+@media(max-width: 767px) {
+    .blog .container .comp h1 {
+        font-size: 60px;
+    }
+}
+
+.blog .container .comp h3 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    margin-top: -30px;
+}
+
+.blog .container .comp i {
+    color: var(--main-Color);
+    margin-top: 15px;
+}
+
+.blog .container .text {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.blog .container .message {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog .container .message .info {
+    flex-basis: 45%;
+    margin-bottom: 20px;
+}
+
+@media(max-width: 600px) {
+    .blog .container .message .info {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.blog .container .message .opin {
+    flex-basis: 100%;
+    height: 100px;
+}
+
+.blog .container .message .info,
+.blog .container .message .opin {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #777;
+    padding: 10px;
+    caret-color: #777;
+}
+
+.blog .container .message .info:focus,
+.blog .container .message .opin:focus {
+    outline: none;
+}
+
+.blog .container .message .info::placeholder,
+.blog .container .message .opin::placeholder {
+    font-weight: normal;
+}
+
+.blog .container .inputs form input {
+    color: white;
+}
+
+.blog .container .inputs form textarea {
+    color: white;
+}
+
+.blog .container .inputs form input[type="submit"] {
+    border: none;
+    background: none;
+    border-radius: 5px;
+    background-color: var(--main-Color);
+    width: fit-content;
+    color: white;
+    font-weight: bold;
+    padding: 10px 40px;
+    margin: 45px auto 0;
+    transition: .3s linear;
+    cursor: pointer;
+}
+
+.blog .container .inputs form input[type="submit"]:hover {
+    background-color: #033ec9b1;
+}
+
+.blog .container .media {
+    margin-top: 50px;
+}
+
+.blog .container .media ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.blog .container .media ul li {
+    cursor: pointer;
+}
+
+.blog .container .media ul li h4 {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.blog .container .media ul li span {
+    color: var(--transperent-Color);
+    font-weight: normal;
+    font-size: 14px;
+    transition: .3s linear;
+}
+
+.blog .container .media ul li:hover span {
+    color: var(--main-Color);
+}
+
+
+/* end contact */
+
+
+/* start footer */
+
+footer {
+    position: relative;
+    background-color: #272727;
+}
+
+footer .container .fot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+@media(max-width: 767px) {
+    footer .container .fot {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+footer .container .fot .contact {
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width: 767px) {
+    footer .container .fot .contact {
+        margin: 40px 0;
+    }
+}
+
+footer .container .fot .contact .acont {
+    display: flex;
+    align-items: center;
+}
+
+footer .container .fot .contact .acont li {
+    margin-right: 20px;
+    transition: .3s ease;
+}
+
+footer .container .fot .contact .acont a {
+    color: white;
+    transition: .3s ease;
+}
+
+footer .container .fot .contact .acont li:hover,
+footer .container .fot .contact .acont a:hover {
+    transform: rotate(360deg);
+    color: var(--transperent-Color);
+}
+
+footer .container .fot .contact p {
+    color: var(--transperent-Color);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+footer .container .fot .contact span a {
+    color: var(--transperent-Color);
+}
+
+footer .container .fot .up {
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width: 767px) {
+    footer .container .fot .up {
+        align-items: flex-end;
+    }
+}
+
+footer .container .fot .up span {
+    color: var(--transperent-Color);
+    margin-right: 20px;
+}
+
+footer .container .fot .up i {
+    color: white;
+}
+
+footer .container .fot .up i:hover {
+    animation: up .5s linear infinite;
+}
+
+@keyframes up {
+    0%,
+    20%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40%,
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* end footer */
